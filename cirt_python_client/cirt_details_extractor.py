@@ -8,13 +8,13 @@ requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 import json
 from zipfile import ZipFile
 
-API_BASE_URL = "https://api.theexchange.fanniemae.com/v1/connecticut-ave-securities/"
+API_BASE_URL = "https://api.theexchange.fanniemae.com/v1/credit-insurance-risk-transfer/"
 HEADER_FILE_NAME = '00CRT_Header_File.csv'
 MANIFEST_FILE_NAME = 'manifest.txt'
 HEADER_ROW_COPY=[]
 
 def get_config_file():
-    with open("cas-config.json") as configFile:
+    with open("cirt-config.json") as configFile:
         config = json.load(configFile)
     return config
 
@@ -89,7 +89,7 @@ class RowObject(object):
 
     def is_date(self, value):
         try:
-            # CAS API returns date in MMYYYY format,
+            # CIRT API returns date in MMYYYY format,
             # hence any string value which has length lesser than 5 will be considered as invalid date
             if len(value) < 6:
                 return False
@@ -106,7 +106,7 @@ class RowObject(object):
             return False
 
 
-def get_cas_file_data(extracted_zip_files, output_folder_name):
+def get_cirt_file_data(extracted_zip_files, output_folder_name):
     header_row = get_header_row(extracted_zip_files, output_folder_name)
     print(f'converted python object names are {header_row}')
     objects_data_list = []

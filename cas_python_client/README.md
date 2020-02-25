@@ -1,6 +1,6 @@
 
 # cas-python3-clients
-CAS api python3 clients, including code samples to  submit requests, and process responses both small and large.
+cas api python3 clients, including code samples to  submit requests, and process responses both small and large.
 
 
 ### Installation Instructions:

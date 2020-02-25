@@ -3,7 +3,7 @@ import os
 import time
 import datetime
 import sys
-from cas_details_extractor import get_cas_file_data, consume_and_store_response, get_headers, API_BASE_URL, send_request, get_header_properties
+from cirt_details_extractor import get_cirt_file_data, consume_and_store_response, get_headers, API_BASE_URL, send_request, get_header_properties
 
 REQUEST_COMPLETED = 'completed'
 os.environ['NO_PROXY'] = 'localhost'
@@ -55,10 +55,10 @@ if __name__ == "__main__":
     print("executing query from file " + spec_file_name + " and sending output to " + output_file_name)
     sys.stdout.flush()
     s3_url_for_zip_file = get_cust_download_zip_url(spec_file_name)
-    print(f's3 url to download cas file ..... {s3_url_for_zip_file}')
+    print(f's3 url to download cirt file ..... {s3_url_for_zip_file}')
     extracted_zip_files = consume_and_store_response(s3_url_for_zip_file, output_file_name)
-    custom_download_objects_data_list = get_cas_file_data(extracted_zip_files,output_file_name)
-    print(f'length of python object list for cas download {len(custom_download_objects_data_list)}')
+    custom_download_objects_data_list = get_cirt_file_data(extracted_zip_files,output_file_name)
+    print(f'length of python object list for cirt download {len(custom_download_objects_data_list)}')
     header_row=get_header_properties()
     print(f'printing first row value for python objects')
     for header in header_row:

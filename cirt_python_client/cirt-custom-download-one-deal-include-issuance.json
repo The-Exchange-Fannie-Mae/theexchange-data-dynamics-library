@@ -2,9 +2,10 @@
   "single-response-file-requested": false,
 "deal-specification":
 {
-  "lossTypes": "Actual Loss",
-  "selected-group-types": "G1",
-  "explicitly-designated-deals": ["CAS 2016 C04 G1", "CAS 2016 C03 G1"]
+  "include-high-ltv-deals":false,
+  "include-low-ltv-deals":false,
+  "include-arm-deals":false,
+  "include-15-year-deals":true
 },
 "date-specification":
 {

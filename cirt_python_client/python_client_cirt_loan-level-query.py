@@ -2,13 +2,14 @@ import json
 import time
 from datetime import datetime
 import sys
-from cas_details_extractor import get_cas_file_data, consume_and_store_response, get_headers, API_BASE_URL, send_request,get_header_properties
+from cirt_details_extractor import get_cirt_file_data, consume_and_store_response, get_headers, API_BASE_URL, send_request,get_header_properties
 
 LOAN_HEADER_FILE_NAME = '00CRT_Header_File.csv'
 REQUEST_COMPLETED = 'completed'
 
 
 def get_loan_query_request_payload(spec_file_name):
+    payload = ''
     payload = ''
     with open(spec_file_name) as json_data:
         payload_dict = json.load(json_data)
@@ -57,8 +58,8 @@ if __name__ == "__main__":
     s3_url_for_zip_file = get_loan_request_zip_url(spec_file_name)
     time.sleep(10)
     extracted_zip_files = consume_and_store_response(s3_url_for_zip_file, output_file_name)
-    loan_objects_data_list = get_cas_file_data(extracted_zip_files,output_file_name)
-    print(f'length of python object list for cas loan {len(loan_objects_data_list)}')
+    loan_objects_data_list = get_cirt_file_data(extracted_zip_files,output_file_name)
+    print(f'length of python object list for cirt loan {len(loan_objects_data_list)}')
     header_row = get_header_properties()
     print(f'printing first row value for python objects')
     for header in header_row:
