@@ -1,0 +1,17 @@
+{
+  "single-response-file-requested": false,
+"deal-specification":
+{
+  "include-high-ltv-deals":false,
+  "include-low-ltv-deals":false,
+  "include-arm-deals":false,
+  "include-15-year-deals":true
+},
+"date-specification":
+{
+  "earliest-date": "112016",
+  "most-recent-date": "012017",
+  "include-issuance": true,
+  "include-remittance": false
+}
+}

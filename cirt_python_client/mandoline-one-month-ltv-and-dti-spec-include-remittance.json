@@ -1,0 +1,31 @@
+{
+"deal-specification": {
+  "explicitly-designated-deals" : ["CIRT 2014-1","CIRT 2015-1","CIRT 2015-2"],
+  "include-all-deals": false,
+    "include-low-ltv-deals":true,
+    "include-high-ltv-deals":true,
+    "include-arm-deals":true,
+    "include-15-year-deals":true
+
+},
+"loan-specification" : {
+   "terms" : [
+      {
+        "type":"do-not-include-issuance",
+    "type":"monthly-reporting-period-range",
+   "earliest-date":"102014",
+   "most-recent-date":"062015"
+
+   },
+    {"type": "ltv-range", "floor": 61,"ceiling": 71},
+    {"type": "cltv-range", "floor": 61,"ceiling": 71},
+   {"type": "borrower-count-range", "floor": "1" , "ceiling":"2"},
+   {"type": "debt-to-income-ratio-range","floor": 12.68,"ceiling": 25.1},
+   {"type": "not-first-time-home-buyer"},
+   {"type": "loan-purpose-one-of", "values": ["PURCHASE"] } ,
+   {"type": "occupancy-one-of", "values": ["Principal"] },
+   {"type": "state-code-one-of","values": ["VA"] },
+   {"type": "zip-3-range", "floor": "201", "ceiling": "225"}
+
+  ]}
+}
