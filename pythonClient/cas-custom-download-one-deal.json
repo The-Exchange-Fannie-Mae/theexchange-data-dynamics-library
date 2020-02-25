@@ -1,0 +1,15 @@
+{
+"deal-specification":
+{
+  "lossTypes": "Actual Loss",
+  "selected-group-types": "G1",
+  "explicitly-designated-deals": ["CAS 2016 C04 G1", "CAS 2016 C03 G1"]
+},
+"date-specification":
+{
+  "earliest-date": "112016",
+  "most-recent-date": "012017",
+  "include-issuance": true,
+  "include-remittance": true
+}
+}
